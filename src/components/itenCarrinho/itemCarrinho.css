@@ -1,0 +1,33 @@
+.itenCarrinho{
+    width: 100%;
+    max-width: 300px;
+    min-width: 280px;
+    background-color: #ffffff;
+    margin: 10px auto;
+    height: 100px;
+    border-radius: 15px;
+    padding: 20px 15px;
+    display: flex;
+}
+
+.itenCarrinho .img{
+    min-width: 60px;
+    height: 60px;
+    background-color: #ccc;
+}
+
+.itenCarrinho .infos{
+    margin-left: 20px;
+    width: 60%;
+}
+
+.itenCarrinho .trash-icon{
+    width: 40%;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.itenCarrinho .trash-icon:hover{
+    color: rgb(199, 12, 12);
+}

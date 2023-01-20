@@ -1,0 +1,127 @@
+.admin{
+    padding: 0 7%;
+    margin-bottom: 100px;
+}
+
+.admin form.login{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    align-items: center;
+    padding: 15px 0;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.admin form.login input:not([type=button]){
+    width: 70%;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0 5px;
+}
+
+.admin form.login input:not([type=button]):focus{
+    outline: 0;
+}
+
+.admin form.login input[type=button]{
+    width: 70%;
+    background-color: rgb(2, 201, 2);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.admin form.login input[type=button]:hover{
+    background-color: rgb(8, 165, 8)
+}
+
+form.add-lanche {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    align-items: center;
+    padding: 20px 15px;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+form.add-lanche input[type="file"]{
+    display: none;
+}
+
+form.add-lanche label {
+    padding: 5px 5px;
+    width: 40%;
+    background-color: #02c902;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+form.add-lanche input:not([type=button]), form.add-lanche textarea{
+    width: 60%;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 2px 5px;
+    resize: none;
+}
+
+form.add-lanche input:not([type=button]), form.add-lanche textarea:focus{
+    outline: none;
+}
+
+form.add-lanche input[type=button]{
+    width: 60%;
+    background-color: #02c902;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+form.add-lanche input[type=button]:hover{
+    background-color: rgb(8, 165, 8)
+}
+
+.pedidos{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.pedidos .pedidoIten{
+    width: 300px;
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 15px 10px;
+    border-radius: 10px;
+}
+
+.pedidos .pedidoIten p{
+    margin: 15px 0;
+    border-bottom: 1px dotted black ;
+}
+
+.pedidos .pedidoIten a{
+    text-decoration: none;
+    color: white;
+    background-color: #02c902;
+    padding: 7px;
+    border-radius: 5px;
+}
+.pedidos .pedidoIten a:hover{
+    background-color: rgb(8, 165, 8)
+}

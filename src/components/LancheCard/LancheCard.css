@@ -1,0 +1,56 @@
+.LancheCard {
+    margin: 0 10px;
+    margin-top: 15px;
+    width: 160px;
+    height: 240px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.LancheCard .img{
+    background-color: #ccc;
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.LancheCard p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.avaliation{font-weight: 600;}
+
+
+.icon-avaliacao{
+    color: #03a503;
+    
+}
+.avaliation{
+    display: block;
+}
+
+.card-footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price{
+    font-weight: 600;
+}
+
+.LancheCard button{
+    width: 20%;
+    text-align: center;
+    height: 30px;
+    background-color: #03a503;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}

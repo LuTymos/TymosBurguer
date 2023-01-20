@@ -1,0 +1,50 @@
+.Home {
+    padding: 0px 7%;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.Home .categorias .opcoes{
+    padding: 12px 0;
+    width: 100%;
+    margin: 15px auto;
+}
+
+.Home .categorias .opcoes .opcoes-wraper{
+    height: 40px;
+    display: flex;
+    width: 100%;
+    overflow-x:scroll;
+}
+
+.Home .categorias .opcoes .opcoes-wraper span {
+    align-items: center;
+    display: flex;
+    min-width: max-content;
+    /* height: 20px; */
+    /* display: inline-block; */
+    background-color: white;
+    margin: 0 5px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.Home .categorias .opcoes .opcoes-wraper span:hover{
+    color: white;
+    background-color: rgb(3, 165, 3);
+}
+
+.opcoes-wraper::-webkit-scrollbar {
+    display: none;
+}
+
+.itens {
+    padding: 0 1%;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
