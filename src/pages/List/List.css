@@ -1,8 +1,13 @@
 .List{
     width: 100%;
     padding: 0 7%;
+    margin-bottom: 100px;
 }
 
 .List h5{
     font-weight: normal;
+}
+
+.List .itens {
+    width: 75vw;
 }

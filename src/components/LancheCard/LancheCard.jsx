@@ -6,17 +6,19 @@ import './LancheCard.css'
 
 
 function LancheCard(lanche) {
-  // const {sacola, setSacola} = useContext(ItensContext)
+  console.log(lanche)
+  const {nome, preco, avaliacao, img} = lanche.lanche.info
+
 
 
     return (
       <div className="LancheCard">
         
-            <p className="title">{lanche.nome}</p>
-            <div className="img"></div>
-            <span className="avaliation"><BsFillStarFill className='icon-avaliacao'/>{lanche.avaliacao}</span>
+            <p className="title">{nome}</p>
+            <img src={img} className="img"></img>
+            <span className="avaliation"><BsFillStarFill className='icon-avaliacao'/>{avaliacao}</span>
             <div className='card-footer'>
-            <p className="price" >R${lanche.preco}</p>
+            <p className="price" >R${preco}</p>
             <button>+</button>
             </div>
       </div>

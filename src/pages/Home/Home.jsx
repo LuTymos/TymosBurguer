@@ -9,10 +9,12 @@ import './Home.css'
 
 
 
-function Home() {
+function Home(props) {
 
 
-const lanches = [{nome:'Lanchão', preco: 15.00, avaliacao:4.3},{nome:'Dogão', preco: 10.00, avaliacao:4.7}, {nome:'Pizza P', preco: 25.00, avaliacao:4.9}, {nome:'Coca-Cola', preco: 8.00, avaliacao:5.0},{nome:'Lanchão', preco: 15.00, avaliacao:4.3},{nome:'Lanchão', preco: 15.00, avaliacao:4.3}]
+
+    const lanches = props.lanches
+    console.log(lanches)
 
 
 
@@ -37,7 +39,7 @@ const lanches = [{nome:'Lanchão', preco: 15.00, avaliacao:4.3},{nome:'Dogão', 
             <div className="popular">
                 <h3>Mais escolhidos:</h3>
             <div className="itens">
-            {lanches.length > 0 && lanches.map((lanche)=><LancheCard  {...lanche} />)}
+            {lanches.length > 0 && lanches.map((lanche)=><LancheCard  lanche={lanche} />)}
             </div>
             </div>
             
