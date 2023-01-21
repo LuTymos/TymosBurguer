@@ -1,6 +1,8 @@
 import './Admin.css'
 import { auth, db, storage } from '../../firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import {addDoc, collection} from 'firebase/firestore'
 import{useState} from 'react'
 
 
@@ -24,41 +26,80 @@ function Admin() {
     
   }
 
-  // function criarPost(){
+  function criarLanche(e){
+    e.preventDefault()
+
+    const nome = document.getElementById('nome').value
+    const preco = document.getElementById('preco').value
+    const avaliacao = document.getElementById('avaliacao').value
 
 
-  //   const nome = (document.getElementById('nome') as HTMLSelectElement)).value
-  //   const preco = (document.getElementById('preco')as HTMLSelectElement)).value
-  //   const avaliacao = (document.getElementById('avaliacao') as HTMLSelectElement)).value
+    const refUpload = ref(storage,`images/${file.name}`)
 
+    uploadBytes(refUpload, file).then((snapshot)=>{
+      getDownloadURL(refUpload).then((url)=>{
+        addDoc(collection(db, "lanches"), {
+          nome:nome,
+          preco: preco,
+          avaliacao: avaliacao,
+          img: url
+        });
 
-  //   const upload = storage.ref(`images/${file.name}`).put(file)
-
-  //   upload.on("state_changed", function(snapshot){
-  //     const progress = Math.round(snapshot.bytesTransferred/snapshot.totalBytes) * 100
-  //     setProgress(progress)
-  //     },function(error){
+        document.getElementById('nome').value =""
+        document.getElementById('preco').value =""
+        document.getElementById('avaliacao').value = ""
         
-  //     },function(){
+        setFile(null)
+      }).catch((err)=>{
+        alert(err.message)
+      })
+    })
 
-  //       storage.ref("images").child(file.name).getDownloadURL()
-  //       .then(function(url){
-  //         db.collection('posts').add({
-  //           titulo: titulo,
-  //           descricao:descricao,
-  //           image: url,
-  //           username: props.user,
-  //           times: firebase.firestore.FieldValue.serverTimestamp()
-  //         })
+    
 
-  //         setProgress(0)
-  //         setFile(null)
 
-  //         alert("Postado!")
-  //         document.getElementById('upload').reset()
-  //       })
+    
 
-  //     })
+
+//     import { collection, addDoc } from "firebase/firestore"; 
+
+// // Add a new document with a generated id.
+// const docRef = await addDoc(collection(db, "cities"), {
+//   name: "Tokyo",
+//   country: "Japan"
+// });
+// console.log("Document written with ID: ", docRef.id);
+
+    // nst cityRef = doc(db, 'cities', 'BJ');
+    // setDoc(cityRef, { capital: true }, { merge: true });
+
+
+
+//     // Add a new document in collection "cities"
+// await setDoc(doc(db, "cities", "LA"), {
+//   name: "Los Angeles",
+//   state: "CA",
+//   country: "USA"
+// });
+
+    }
+    // ,function(){
+    //     ref(storage, "images").child(file.name).getDownloadURL()
+    //     .then(function(url){
+    //       db.collection('lanches').add({
+    //         nome:nome,
+    //         preco:preco,
+    //         image: url,
+    //         avaliacao: avaliacao
+    //       })
+
+    //       setFile(null)
+
+    //       alert("Postado!")
+    //       document.getElementById('upload').reset()
+    //     })
+
+    //   })
   // }
  
 
@@ -70,11 +111,11 @@ function Admin() {
           <form className='add-lanche' action="">
             <h3>Cadastrar Lanche:</h3>
             <label htmlFor="file"> Enviar foto</label>
-            <input onChange={()=>setFile(target.files[0])} id='file' type="file"  />
+            <input onChange={(e)=>setFile(e.target.files[0])} id='file' type="file"  />
             <input type="text" id='nome' placeholder='Nome do Lanche...' />
             <input type="number" id='preco'  placeholder='Preço...' />
-            <input type="number" id='avalicao' placeholder='Avaliação' />
-            <input type="button" value="Cadastrar" />
+            <input type="number" id='avaliacao' placeholder='Avaliação' />
+            <input type="button" onClick={(e)=>{criarLanche(e)}} value="Cadastrar" />
           </form>
         </div>
         <h3>Pedidos:</h3>
