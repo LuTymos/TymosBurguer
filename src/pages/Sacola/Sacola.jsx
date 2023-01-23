@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import ItenCarrinho from "../../components/itenCarrinho/ItenCarrinho"
 import ItensContext from "../../context/ItensContext";
+import { Link } from "react-router-dom";
 
 import './sacola.css'
 
