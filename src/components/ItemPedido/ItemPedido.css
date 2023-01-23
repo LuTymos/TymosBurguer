@@ -1,0 +1,31 @@
+.ItemPedido{
+    width: 300px;
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 15px 10px;
+    border-radius: 10px;
+}
+
+.ItemPedido p{
+    margin: 15px 0;
+    border-bottom: 1px dotted black ;
+}
+
+.ItemPedido .pedido{
+    border-bottom: none;
+}
+
+.ItemPedido ul{
+    margin-left: 15px;
+}
+
+.ItemPedido a{
+    text-decoration: none;
+    color: white;
+    background-color: #02c902;
+    padding: 7px;
+    border-radius: 5px;
+}
+.ItemPedido a:hover{
+    background-color: rgb(8, 165, 8)
+}

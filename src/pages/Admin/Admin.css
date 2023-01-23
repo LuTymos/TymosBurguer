@@ -102,26 +102,3 @@ form.add-lanche input[type=button]:hover{
 
 }
 
-.pedidos .pedidoIten{
-    width: 300px;
-    background-color: #ffffff;
-    padding: 15px;
-    margin: 15px 10px;
-    border-radius: 10px;
-}
-
-.pedidos .pedidoIten p{
-    margin: 15px 0;
-    border-bottom: 1px dotted black ;
-}
-
-.pedidos .pedidoIten a{
-    text-decoration: none;
-    color: white;
-    background-color: #02c902;
-    padding: 7px;
-    border-radius: 5px;
-}
-.pedidos .pedidoIten a:hover{
-    background-color: rgb(8, 165, 8)
-}

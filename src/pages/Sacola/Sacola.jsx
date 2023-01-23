@@ -15,7 +15,7 @@ var soma = 0;
 for(var i = 0; i < sacola.length; i++) {
     soma += sacola[i].preco;
 }
-console.log(sacola)
+
     return (
         <div className="Sacola">
             <p className="title">Sacola:</p>

@@ -2,13 +2,32 @@ import './Admin.css'
 import { auth, db, storage } from '../../firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import {addDoc, collection} from 'firebase/firestore'
-import{useState} from 'react'
+import {addDoc, collection, onSnapshot} from 'firebase/firestore'
+import{useState, useEffect} from 'react'
+import ItemPedido from '../../components/ItemPedido/ItemPedido';
 
 
 function Admin() {
   const[user, setUser] = useState(null);
   const [file, setFile] = useState(null)
+
+  const [pedidos, setPedidos] = useState([])
+
+
+  useEffect(() => {
+
+    onSnapshot( collection(db, "pedidos"), (snapshot)=>{
+      setPedidos(snapshot.docs.map(function(document){
+        return {info:document.data()}
+      }))
+
+      console.log(pedidos)
+    })
+
+  }, [Admin])
+
+// const{pedido, total, nome} = pedidos[0].info
+
   
   function login(){
     const email = document.getElementById('email').value;
@@ -55,52 +74,8 @@ function Admin() {
       })
     })
 
-    
-
-
-    
-
-
-//     import { collection, addDoc } from "firebase/firestore"; 
-
-// // Add a new document with a generated id.
-// const docRef = await addDoc(collection(db, "cities"), {
-//   name: "Tokyo",
-//   country: "Japan"
-// });
-// console.log("Document written with ID: ", docRef.id);
-
-    // nst cityRef = doc(db, 'cities', 'BJ');
-    // setDoc(cityRef, { capital: true }, { merge: true });
-
-
-
-//     // Add a new document in collection "cities"
-// await setDoc(doc(db, "cities", "LA"), {
-//   name: "Los Angeles",
-//   state: "CA",
-//   country: "USA"
-// });
-
     }
-    // ,function(){
-    //     ref(storage, "images").child(file.name).getDownloadURL()
-    //     .then(function(url){
-    //       db.collection('lanches').add({
-    //         nome:nome,
-    //         preco:preco,
-    //         image: url,
-    //         avaliacao: avaliacao
-    //       })
 
-    //       setFile(null)
-
-    //       alert("Postado!")
-    //       document.getElementById('upload').reset()
-    //     })
-
-    //   })
-  // }
  
 
   return (
@@ -120,25 +95,10 @@ function Admin() {
         </div>
         <h3>Pedidos:</h3>
         <div className="pedidos">
+
+        {pedidos.length > 0 && pedidos.map((itens) => <ItemPedido pedido={itens}/>)}
           
-          <div className="pedidoIten">
-            <p> Nome cliente </p>
-            <p> Endereço Cliente </p>
-            <p> Pedido Cliente: Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptas ratione unde beatae. Culpa, deleniti. </p>
-            <a href="">Pedido entregue</a>
-          </div>
-          <div className="pedidoIten">
-            <p> Nome cliente </p>
-            <p> Endereço Cliente </p>
-            <p> Pedido Cliente: Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptas ratione unde beatae. Culpa, deleniti. </p>
-            <a href="">Pedido entregue</a>
-          </div>
-          <div className="pedidoIten">
-            <p> Nome cliente </p>
-            <p> Endereço Cliente </p>
-            <p> Pedido Cliente: Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptas ratione unde beatae. Culpa, deleniti. </p>
-            <a href="">Pedido entregue</a>
-          </div>
+          
         </div>
       </div>
       :

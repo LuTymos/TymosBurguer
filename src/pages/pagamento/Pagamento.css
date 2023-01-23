@@ -1,0 +1,66 @@
+.Pagamento{margin-bottom: 100px;}
+
+.Pagamento .Resumo{
+    background-color: #fff;
+    width: 70vw;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.Pagamento .Resumo p{
+    margin: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.Pagamento .informacoes_cliente{
+    background-color: #fff;
+    width: 70vw;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px 5%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.Pagamento .informacoes_cliente input[type=text], .Pagamento .informacoes_cliente textarea{
+    width: 100%;
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 0 7px;
+    height: 30px;
+}
+
+.Pagamento .informacoes_cliente textarea{
+    height: 100px;
+}
+
+.Pagamento .informacoes_cliente .dinheiro, .Pagamento .informacoes_cliente .cartao{
+    display: flex;
+    align-items: center;
+}
+
+.Pagamento .informacoes_cliente input[type=radio]{
+    margin-right: 5px;
+}
+
+.Pagamento .informacoes_cliente button{
+    width: 100%;
+    height: 30px;
+    background-color: #03a503;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.Pagamento .informacoes_cliente span.aviso{
+    color: rgb(223, 32, 32);
+    font-size: 14px;
+    font-weight: bold;
+
+}
