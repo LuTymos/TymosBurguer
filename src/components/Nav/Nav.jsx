@@ -13,7 +13,7 @@ function Nav(){
     return(
         <div className="Nav">
             <Link className='link' to='/'><HiHome className={`icon ${iactive === 'Home' ? 'Active' : ''}`}  onClick={()=>{setActive('Home')}} /></Link>
-            <Link className='link' to="/list"><CgMenuBoxed className={`icon ${iactive === 'Menu' ? 'Active' : ''}`} onClick={()=>{setActive('Menu')}}/></Link>
+            <Link className='link' to="/cardapio"><CgMenuBoxed className={`icon ${iactive === 'Menu' ? 'Active' : ''}`} onClick={()=>{setActive('Menu')}}/></Link>
             <Link to="/sacola" className='link'><HiShoppingBag className={`icon ${iactive === 'Bag' ? 'Active' : ''}`} onClick={()=>{setActive('Bag')}}/></Link>
             <Link to="/admin" className='link'><RiAdminFill className={`icon ${iactive === 'Admin' ? 'Active' : ''}`} onClick={()=>{setActive('Admin')}}/></Link>
         </div>

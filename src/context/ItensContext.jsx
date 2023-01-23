@@ -1,35 +1,20 @@
-import React, { createContext, ReactNode, useState } from 'react';
-
-// const initialConfig = {
-//     isOpenModal: false,
-//     setIsOpenModal: ()=>{},
-
-// }
-
-// export const ItensContext = createContext([]);
+import React, { createContext, useState } from 'react';
 
 
-// type Props = {
-//     children: ReactNode
-// }
-
-// interface array {
-//     sacola: string[] | number[] | any[],
-//     setSacola: React.Dispatch<React.SetStateAction<string[] | number[] | any[]>>
-// }
+export const ItensContext = createContext();
 
 
 
-// export const ItenStore = ({children}: Props)=>{
+export const ItenStore = ({children})=>{
     
-//     const [sacola, setSacola] = useState([])
+    const [sacola, setSacola] = useState([])
     
     
-//     return(
-//         <ItensContext.Provider value={{sacola, setSacola}}>
-//             {children}
-//         </ItensContext.Provider>
-//     )
-// }
+    return(
+        <ItensContext.Provider value={{sacola, setSacola}}>
+            {children}
+        </ItensContext.Provider>
+    )
+}
 
-// export default ItensContext;
+export default ItensContext;

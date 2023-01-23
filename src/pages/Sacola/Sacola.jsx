@@ -1,33 +1,28 @@
 
+import { useContext } from "react";
 import ItenCarrinho from "../../components/itenCarrinho/ItenCarrinho"
+import ItensContext from "../../context/ItensContext";
 
 import './sacola.css'
 
-const sacola = [
-    { nome: 'Lanchão', preco: 15.00 },
-    { nome: 'Dogão', preco: 10.00 },
-    { nome: 'Pizza P', preco: 25.00 },
-    { nome: 'Coca-Cola', preco: 8.00 },
-    { nome: 'Lanchão', preco: 15.00 },
-    { nome: 'Lanchão', preco: 15.00 }
-]
-
-
 
 function Sacola() {
+    const {sacola, setSacola} = useContext(ItensContext)
 
-    var soma = 0;
+
+var soma = 0;
 for(var i = 0; i < sacola.length; i++) {
     soma += sacola[i].preco;
-    console.log(soma)
 }
+console.log(sacola)
     return (
         <div className="Sacola">
             <p className="title">Sacola:</p>
+            {sacola.length == 0 && <h2>Adicione algum Item para continuar...</h2>}
             {sacola.length > 0 && sacola.map((itens) => <ItenCarrinho  {...itens} />)}
 
-            <span className="total">Total: R${soma}</span>
-            <button className="btn-prosseguir">Prosseguir para o pagamento</button>
+            {sacola.length > 0 && <span className="total">Total: R${soma}</span>}
+            {sacola.length > 0 && <Link to='/pagamento'><button className="btn-prosseguir">Prosseguir para o pagamento</button></Link>}
         </div>
     )
 }

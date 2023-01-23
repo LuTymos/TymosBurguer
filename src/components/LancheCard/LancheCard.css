@@ -36,7 +36,7 @@
 }
 
 .card-footer{
-    margin-top: 20px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,10 +44,26 @@
 
 .price{
     font-weight: 600;
+    display: block;
+    margin: 5px 0;
 }
 
-.LancheCard button{
-    width: 40px;
+.add{
+    background-color: #03a503;
+    border: none;
+    color: #fff;
+    position: relative;
+    left: -10px;
+    bottom: -10px;
+    height: 30px;
+    border-radius: 0 0 10px 10px;
+    width: calc(100% + 20px);
+    text-align: center;
+    cursor: pointer;
+}
+
+.quantidade button{
+    width: 30px;
     text-align: center;
     height: 30px;
     background-color: #03a503;
@@ -57,4 +73,18 @@
     border-radius: 10px;
     padding: 0 10px;
     cursor: pointer;
+}
+
+.quantidade{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.quantidade span{
+
+    display: block;
+    width: 30px;
+    text-align: center;
+    height: 20px;
 }

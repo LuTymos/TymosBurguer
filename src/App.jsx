@@ -9,6 +9,7 @@ import List from './pages/List/List'
 import Sacola from './pages/Sacola/Sacola'
 import Admin from './pages/Admin/Admin'
 import { useEffect } from 'react'
+import Pagamento from './pages/pagamento/Pagamento'
 
 
 
@@ -36,9 +37,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home lanches={lanches} />} />
-          <Route path='/list' element={<List lanches={lanches} />} />
+          <Route path='/cardapio' element={<List lanches={lanches} />} />
           <Route path='/sacola' element={<Sacola />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/pagamento' element={<Pagamento/>}></Route>
         </Routes>
         <Nav />
       </BrowserRouter>
