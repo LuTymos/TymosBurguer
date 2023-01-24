@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import ItensContext from "../../context/ItensContext"
 import {  db } from '../../firebase'
 
-import {addDoc, collection} from 'firebase/firestore'
+import {addDoc, collection, DocumentReference} from 'firebase/firestore'
 
 import './Pagamento.css'
 
@@ -16,6 +16,8 @@ function Pagamento() {
     for (let i = 0; i < sacola.length; i++) {
         soma += sacola[i].preco;
     }
+
+    
 
     function enviarPedido(e) {
         e.preventDefault()
@@ -33,32 +35,21 @@ function Pagamento() {
 
         const pedido = []
         sacola.map((itens)=> pedido.push(`${itens.quantidade}x ${itens.nome}`))
-
         
-
-        
-
-
-        const resposta = {
-            nome: nome,
-            endereco: endereco,
-            escolha: opcoes[0],
-            total: soma,
-            pedido: pedido
-        }
 
         addDoc(collection(db, "pedidos"), {
             nome: nome,
             endereco: endereco,
             escolha: opcoes[0],
             total: soma,
-            pedido: pedido
+            pedido: pedido,
           });
           alert("enviado")
+
   
-        //   document.getElementById('nome').value =""
-        //   document.getElementById('preco').value =""
-        //   document.getElementById('avaliacao').value = ""
+          document.getElementById('nome').value =""
+          document.getElementById('endereco').value =""
+          setSacola([])
           
 
 

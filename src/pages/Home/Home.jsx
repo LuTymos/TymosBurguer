@@ -14,8 +14,7 @@ function Home(props) {
 
 
     const lanches = props.lanches
-    console.log(lanches)
-
+    
 
 
 

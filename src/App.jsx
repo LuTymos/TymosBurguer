@@ -25,7 +25,6 @@ function App() {
         return {info:document.data()}
       }))
 
-      console.log(lanches)
     })
 
   }, [])

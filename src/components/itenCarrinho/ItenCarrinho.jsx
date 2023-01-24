@@ -11,7 +11,6 @@ function ItenCarrinho(itens){
 
     function excluir(id){
         setSacola(sacola.filter(item => item.id != id))
-        console.log(sacola)
     }
 
     return(

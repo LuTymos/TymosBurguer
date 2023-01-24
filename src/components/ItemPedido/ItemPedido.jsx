@@ -1,12 +1,17 @@
 
+import { db } from '../../firebase';
+import { collection, doc, deleteDoc } from 'firebase/firestore';
 import './ItemPedido.css'
 
 function ItemPedido(props){
 
-    console.log(props)
 
     const {nome, pedido, endereco, total, escolha} = props.pedido.info
+    const {id} = props.pedido
 
+    function deletar(id){
+        deleteDoc(doc(db, "pedidos", `${id}`))
+    }
 
     return(
         <div className="ItemPedido">
@@ -18,7 +23,7 @@ function ItemPedido(props){
             {pedido.length > 0 && pedido.map((item)=><li>{item}</li>)}
             </ul> 
             <p>Total: R${total}</p>
-            <a href="">Pedido entregue</a>
+            <button onClick={()=>{deletar(id)}}>Pedido entregue</button>
         </div>
     )
 }

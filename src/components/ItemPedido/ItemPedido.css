@@ -19,8 +19,7 @@
     margin-left: 15px;
 }
 
-.ItemPedido a{
-    text-decoration: none;
+.ItemPedido button{
     color: white;
     background-color: #02c902;
     padding: 7px;

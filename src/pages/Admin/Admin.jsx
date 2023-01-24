@@ -15,18 +15,19 @@ function Admin() {
 
 
   useEffect(() => {
-
+    
     onSnapshot( collection(db, "pedidos"), (snapshot)=>{
       setPedidos(snapshot.docs.map(function(document){
-        return {info:document.data()}
+        return {info:document.data(), id:document.id}
       }))
 
-      console.log(pedidos)
+      
     })
 
   }, [Admin])
+  console.log(pedidos)
 
-// const{pedido, total, nome} = pedidos[0].info
+
 
   
   function login(){
