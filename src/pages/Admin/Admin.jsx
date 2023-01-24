@@ -25,7 +25,13 @@ function Admin() {
     })
 
   }, [Admin])
-  console.log(pedidos)
+  
+
+  // useEffect(()=>{
+  //   auth.onAuthStateChanged((val)=>{
+  //     alert(`Bem vindo de volta ${val.email}`)
+  //   })
+  // },[])
 
 
 
