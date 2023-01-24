@@ -1,7 +1,7 @@
 
 
 import { useContext } from 'react'
-import Header from '../../components/Header/Header'
+
 import LancheCard from '../../components/LancheCard/LancheCard'
 
 
@@ -21,7 +21,8 @@ function Home(props) {
     return (
         
         <div className="Home">
-         <Header/>
+            <h2>Bem vindo(a)!</h2>
+
             <div className="categorias">
                 <h3>Todas nossas opções:</h3>
                 <div className="opcoes">

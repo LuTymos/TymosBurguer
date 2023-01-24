@@ -1,0 +1,43 @@
+div.Header{
+    padding: 10px 0;
+    width: 100%;
+}
+
+div.Header .btn-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.Header .btn-menu .icon-header{
+    font-size: 24px;
+    cursor: pointer;
+}
+
+div.Header .search{
+    width: 100%;
+    margin: 20px auto;
+    position: relative;
+
+}
+
+div.Header .search .search-bar{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+div.Header .search .icon-search-bar{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+div.Header .search .search-bar:focus{
+    outline: 0;
+}

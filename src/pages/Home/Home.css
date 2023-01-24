@@ -2,6 +2,11 @@
     padding: 0px 7%;
     width: 100%;
     margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.Home h2{
+    margin: 15px 0;
 }
 
 .Home .categorias .opcoes{

@@ -23,7 +23,7 @@ for(var i = 0; i < sacola.length; i++) {
             {sacola.length > 0 && sacola.map((itens) => <ItenCarrinho  {...itens} />)}
 
             {sacola.length > 0 && <span className="total">Total: R${soma}</span>}
-            {sacola.length > 0 && <Link to='/pagamento'><button className="btn-prosseguir">Prosseguir para o pagamento</button></Link>}
+            {sacola.length > 0 && <Link to='/pagamento'><button className="btn-prosseguir">Prosseguir o pedido</button></Link>}
         </div>
     )
 }
